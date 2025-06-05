@@ -8,6 +8,20 @@ body {
   background-color: #f2f2f2;
 }
 
+/* Skip link */
+.skip-link {
+  position: absolute;
+  top: -40px;
+  background: black;
+  color: white;
+  padding: 8px;
+  z-index: 1000;
+}
+
+.skip-link:focus {
+  top: 0;
+}
+
 /* Header style */
 header {
   background-color: #4CAF50;
@@ -20,7 +34,18 @@ header {
 nav {
   background-color: #388E3C;
   padding: 10px 0;
+  display: inline-block;   /* Changed from flex to inline-block */
+  width: 80%;              /* Set width to 80% */
 }
+
+/* Comment out original li styling */
+/*
+nav li {
+  display: inline-block;
+  width: auto;
+  margin: 0 15px;
+}
+*/
 
 nav ul {
   list-style-type: none;
@@ -28,12 +53,6 @@ nav ul {
   margin: 0;
   display: flex;
   justify-content: center;
-}
-
-nav li {
-  display: inline-block;
-  width: auto;
-  margin: 0 15px;
 }
 
 nav a {
@@ -44,6 +63,11 @@ nav a {
 
 nav a:hover {
   text-decoration: underline;
+}
+
+/* Only style image inside nav */
+nav img {
+  width: 10%;
 }
 
 /* Main content */
@@ -78,10 +102,32 @@ h1 {
   margin-top: 10px;
 }
 
-/* Image styling (optional) */
+/* Image styling - already set max width */
 img {
   max-width: 100%;
   height: auto;
   border-radius: 5px;
   margin: 5px;
+}
+
+/* Grid layout */
+.grid {
+  display: grid;
+  grid-template-columns: 40% 40%;
+  justify-content: space-between;
+  align-items: start;
+  row-gap: 20px;
+}
+
+/* Only images in .grid */
+.grid img {
+  width: 100%;
+}
+
+/* Flex layout */
+.flex {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  gap: 20px;
 }
